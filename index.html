@@ -11,11 +11,7 @@
 <body>
     <div class="container mt-5">
         <header class="text-center mb-5">
-<<<<<<< HEAD
-            <h1>个人简历</h1>
-=======
             <h1>我的个人简历</h1>
->>>>>>> 26b727b366c5333b96ea6127a66d6d8e4fee220b
             <p class="lead">Python开发工程师 | 3年经验</p>
         </header>
 
@@ -26,11 +22,7 @@
                         <h2 class="card-title">个人信息</h2>
                         <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="头像" class="img-fluid rounded-circle mb-3" width="150">
                         <ul class="list-unstyled">
-<<<<<<< HEAD
                             <li><strong>电话：</strong> 18888888888</li>
-=======
-                            <li><strong>电话：</strong> 138888888</li>
->>>>>>> 26b727b366c5333b96ea6127a66d6d8e4fee220b
                             <li><strong>邮箱：</strong> huangzihao289@gmail.com</li>
                             <li><strong>GitHub：</strong> github.com/ua-Huang</li>
                         </ul>
@@ -96,8 +88,8 @@
     <!-- WebP格式（可选优化） -->
     <source srcset="{{ url_for('static', filename='images/profile.webp') }}" type="image/webp">
     <!-- 原图回退 -->
-    <img src="static/images/profile.jpg">
-         alt="张三的个人职业照"
+    <img src="{{ url_for('static', filename='images/profile.jpg') }}"
+         alt="个人职业照"
          class="img-fluid rounded-circle"
          width="200"
          height="200"

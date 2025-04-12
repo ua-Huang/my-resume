@@ -2,13 +2,12 @@ from flask import Flask, render_template, send_from_directory
 
 app = Flask(__name__)
 
-# 简历数据 - 根据您的实际情况修改
 RESUME_DATA = {
-    'name': '张三',
-    'title': '全栈开发工程师',
+    'name': 'huang',
+    'title': '开发工程师',
     'contact': {
         'email': 'your.email@example.com',
-        'phone': '+86 138-XXXX-XXXX',
+        'phone': '+86 18888888888',
         'github': 'github.com/yourusername',
         'linkedin': 'linkedin.com/in/yourprofile'
     },
@@ -59,12 +58,11 @@ RESUME_DATA = {
 }
 
 @app.route('/')
-def resume():
-    return render_template('resume.html', resume=RESUME_DATA)
+def resume_page():  # 修改函数名避免冲突
+    return render_template('resume.html', resume_data=RESUME_DATA)
 
 @app.route('/download')
 def download_resume():
-    # 如果您有PDF版本简历，可以放在static文件夹并通过此路由提供下载
     return send_from_directory('static', 'resume.pdf', as_attachment=True)
 
 if __name__ == '__main__':
