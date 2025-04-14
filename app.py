@@ -45,6 +45,7 @@ def home():
 
 
 if __name__ == '__main__':
+    app.run(debug=True)
     # 生成静态 HTML
     with app.test_request_context():
         rendered_html = render_template('index.html', resume=RESUME_DATA)  # 直接渲染
