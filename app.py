@@ -5,7 +5,7 @@ app = Flask(__name__)
 RESUME_DATA = {
     'name': 'Huang',
     'title': 'Python开发工程师',
-    'years_experience': '3000000年',
+    'years_experience': '10年',
     'contact': {
         'phone': '18888888888',
         'email': 'huangzihao289@gmail.com',
