@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ resume.name }}的个人简历</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Huang的个人简历</title>
+    <link rel="stylesheet" href="/static/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container mt-5">
         <header class="text-center mb-5">
-            <h1>{{ resume.name }}的个人简历</h1>
-            <p class="lead">{{ resume.title }} | {{ resume.years_experience }}经验</p>
+            <h1>Huang的个人简历</h1>
+            <p class="lead">Python开发工程师 | 3000000年经验</p>
         </header>
 
         <section class="row">
@@ -19,11 +19,11 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <h2 class="card-title">个人信息</h2>
-                        <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="头像" class="img-fluid rounded-circle mb-3" width="150">
+                        <img src="/static/images/profile.jpg" alt="头像" class="img-fluid rounded-circle mb-3" width="150">
                         <ul class="list-unstyled">
-                            <li><strong>电话：</strong> {{ resume.contact.phone }}</li>
-                            <li><strong>邮箱：</strong> {{ resume.contact.email }}</li>
-                            <li><strong>GitHub：</strong> {{ resume.contact.github }}</li>
+                            <li><strong>电话：</strong> 18888888888</li>
+                            <li><strong>邮箱：</strong> huangzihao289@gmail.com</li>
+                            <li><strong>GitHub：</strong> github.com/ua-Huang</li>
                         </ul>
                     </div>
                 </div>
@@ -32,9 +32,15 @@
                     <div class="card-body">
                         <h2 class="card-title">技能</h2>
                         <ul>
-                            {% for skill in resume.skills %}
-                            <li>{{ skill }}</li>
-                            {% endfor %}
+                            
+                            <li>Python (Flask/Django)</li>
+                            
+                            <li>HTML/CSS/JavaScript</li>
+                            
+                            <li>数据库 (MySQL/PostgreSQL)</li>
+                            
+                            <li>Linux/Shell</li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -44,17 +50,21 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <h2 class="card-title">工作经历</h2>
-                        {% for exp in resume.experience %}
+                        
                         <div class="mb-4">
-                            <h3>{{ exp.company }}</h3>
-                            <p><strong>{{ exp.position }}</strong> | {{ exp.duration }}</p>
+                            <h3>ABC科技有限公司</h3>
+                            <p><strong>Python开发工程师</strong> | 2020年1月 - 至今</p>
                             <ul>
-                                {% for responsibility in exp.responsibilities %}
-                                <li>{{ responsibility }}</li>
-                                {% endfor %}
+                                
+                                <li>负责公司核心产品的后端开发</li>
+                                
+                                <li>优化系统性能，提升30%响应速度</li>
+                                
+                                <li>带领3人小组完成XX项目</li>
+                                
                             </ul>
                         </div>
-                        {% endfor %}
+                        
                     </div>
                 </div>
 
@@ -62,10 +72,10 @@
                     <div class="card-body">
                         <h2 class="card-title">教育背景</h2>
                         <p>
-                            <strong>{{ resume.education.institution }}</strong> |
-                            {{ resume.education.major }} |
-                            {{ resume.education.degree }} |
-                            {{ resume.education.years }}
+                            <strong>XX大学</strong> |
+                            计算机科学与技术 |
+                            本科 |
+                            2016-2020
                         </p>
                     </div>
                 </div>
@@ -73,12 +83,12 @@
                 <div class="card">
                     <div class="card-body">
                         <h2 class="card-title">项目经验</h2>
-                        {% for project in resume.projects %}
+                        
                         <div class="mb-4">
-                            <h3>{{ project.name }}</h3>
-                            <p>{{ project.description }}</p>
+                            <h3>个人博客系统</h3>
+                            <p>基于Flask开发的个人博客系统，实现了用户认证、文章发布、评论等功能。</p>
                         </div>
-                        {% endfor %}
+                        
                     </div>
                 </div>
             </div>
@@ -86,6 +96,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script src="/static/js/script.js"></script>
 </body>
 </html>

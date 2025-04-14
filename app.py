@@ -5,7 +5,7 @@ app = Flask(__name__)
 RESUME_DATA = {
     'name': 'Huang',
     'title': 'Python开发工程师',
-    'years_experience': '300年',
+    'years_experience': '3000000年',
     'contact': {
         'phone': '18888888888',
         'email': 'huangzihao289@gmail.com',
@@ -41,7 +41,16 @@ RESUME_DATA = {
 
 @app.route('/')
 def home():
-    return render_template('index.html', resume=RESUME_DATA)
+    return render_template('index.html', resume=RESUME_DATA)  # 确保返回的是模板渲染结果
+
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # 生成静态 HTML
+    with app.test_request_context():
+        rendered_html = render_template('index.html', resume=RESUME_DATA)  # 直接渲染
+
+    # 保存到 index.html
+    with open("index.html", "w", encoding="utf-8") as f:
+        f.write(rendered_html)
+
+    print("✅ 静态 HTML 已生成：index.html")
