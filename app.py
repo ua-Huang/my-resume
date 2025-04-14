@@ -45,11 +45,14 @@ def home():
 
 if __name__ == '__main__':
     app.run(debug=True)
-    # 生成静态 HTML
+    # 生成静态HTML时修复路径
     with app.test_request_context():
         rendered_html = render_template('index.html', resume=RESUME_DATA)
+        # 替换动态URL为静态路径
+        rendered_html = rendered_html.replace('src="/static/', 'src="static/')
+        rendered_html = rendered_html.replace('href="/static/', 'href="static/')
+        rendered_html = rendered_html.replace('url_for(\'static\', filename=\'', '').replace('\')', '')
 
-    # 保存到 index.html
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(rendered_html)
 
