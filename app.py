@@ -49,6 +49,9 @@ if __name__ == '__main__':
     with app.test_request_context():
         rendered_html = render_template('index.html', resume=RESUME_DATA)
 
+    rendered_html = rendered_html.replace('static/images/profile.jpg', 'static/images/profile.jpg')
+    rendered_html = rendered_html.replace('/static/images/profile.jpg', 'static/images/profile.jpg')
+
     # 保存到 index.html
     with open("index.html", "w", encoding="utf-8") as f:
         f.write(rendered_html)
