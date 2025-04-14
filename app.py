@@ -48,13 +48,16 @@ if __name__ == '__main__':
     app.run(debug=True)
     # 生成静态 HTML
     with app.test_request_context():
-        rendered_html = render_template('index.html', resume=RESUME_DATA)  # 直接渲染
+        rendered_html = render_template('index.html', resume=RESUME_DATA)
+
+    # 替换 url_for 路径为相对路径
+    rendered_html = rendered_html.replace(
+        '{{ url_for(\'static\', filename=\'images/profile.jpg\') }}',
+        'static/images/profile.jpg'
+    )
 
     # 保存到 index.html
-    with open("index.html", "r+", encoding="utf-8") as f:
-        content = f.read()
-        content = content.replace("{{ url_for('static', filename='images/profile.jpg') }}", "static/images/profile.jpg")
-        f.seek(0)
-        f.write(content)
+    with open("index.html", "w", encoding="utf-8") as f:
+        f.write(rendered_html)
 
     print("✅ 静态 HTML 已生成：index.html")
