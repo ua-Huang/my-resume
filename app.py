@@ -51,10 +51,8 @@ if __name__ == '__main__':
         rendered_html = render_template('index.html', resume=RESUME_DATA)
 
     # 替换 url_for 路径为相对路径
-    rendered_html = rendered_html.replace(
-        '{{ url_for(\'static\', filename=\'images/profile.jpg\') }}',
-        'static/images/profile.jpg'
-    )
+    rendered_html = rendered_html.replace('static/images/profile.jpg', 'static/images/profile.jpg')
+    rendered_html = rendered_html.replace('/static/images/profile.jpg', 'static/images/profile.jpg')
 
     # 保存到 index.html
     with open("index.html", "w", encoding="utf-8") as f:
