@@ -1,5 +1,4 @@
 from flask import Flask, render_template
-
 app = Flask(__name__)
 
 RESUME_DATA = {
@@ -44,13 +43,11 @@ RESUME_DATA = {
 def home():
     return render_template('index.html', resume=RESUME_DATA)  # 确保返回的是模板渲染结果
 
-
 if __name__ == '__main__':
     app.run(debug=True)
     # 生成静态 HTML
     with app.test_request_context():
         rendered_html = render_template('index.html', resume=RESUME_DATA)
-
 
     # 保存到 index.html
     with open("index.html", "w", encoding="utf-8") as f:
