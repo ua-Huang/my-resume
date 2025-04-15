@@ -21,7 +21,7 @@ RESUME_DATA = {
     'experience': [{
         'company': 'ABC科技有限公司',
         'position': 'Python开发工程师',
-        'duration': '2020年1月 - 至今',
+        'duration': '2022年1月 - 至今',
         'responsibilities': [
             '负责公司核心产品的后端开发',
             '优化系统性能，提升30%响应速度',
