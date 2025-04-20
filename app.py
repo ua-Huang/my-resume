@@ -3,29 +3,29 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 RESUME_DATA = {
-    'name': 'Huang',
+    'name': '杨佳乐',
     'title': 'Python开发工程师',
-    'years_experience': '很多年',
+    'years_experience': '超级多年',
     'contact': {
-        'phone': '18888888888',
-        'email': 'huangzihao289@gmail.com',
-        'github': 'github.com/ua-Huang'
+        'phone': '88888888888',
+        'email': '2076140438@qq.com',
+        'github': 'github.com/yyyjjjlll'
     },
     'skills': [
         'Python (Flask/Django)',
-        'HTML/CSS/JavaScript',
+        '三角洲属鼠',
         '数据库 (MySQL/PostgreSQL)',
         'Linux/Shell',
-        '数字图像处理'
+        '通信专业户'
     ],
     'experience': [{
-        'company': 'ABC科技有限公司',
+        'company': '嘉黎顿梦想公司',
         'position': 'Python开发工程师',
         'duration': '2022年1月 - 至今',
         'responsibilities': [
-            '负责公司核心产品的后端开发',
-            '优化系统性能，提升30%响应速度',
-            '带领2人小组完成简历项目'
+            '参与公司核心项目的开发与维护',
+            '协助团队完成需求分析和功能设计',
+            '负责部分模块的代码编写和测试'
         ]
     }],
     'education': {
@@ -35,8 +35,8 @@ RESUME_DATA = {
         'years': '2022-2026'
     },
     'projects': [{
-        'name': '个人博客系统',
-        'description': '基于Flask开发的个人博客系统，实现了用户认证、文章发布、评论等功能。'
+        'name': '智能问答系统',
+        'description': '使用Python和自然语言处理技术开发的智能问答系统，能够回答特定领域的问题'
     }]
 }
 
