@@ -35,7 +35,7 @@ RESUME_DATA = {
         'years': '2022-2026'
     },
     'projects': [{
-        'name': '智能问答系统',
+        'name': 'ai智能问答系统',
         'description': '使用Python和自然语言处理技术开发的智能问答系统，能够回答特定领域的问题'
     }]
 }
