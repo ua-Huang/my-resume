@@ -3,17 +3,17 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 RESUME_DATA = {
-    'name': '杨佳乐',
+    'name': '黄梓豪',
     'title': 'Python开发工程师',
     'years_experience': '超级多年',
     'contact': {
-        'phone': '88888888888',
-        'email': '2076140438@qq.com',
-        'github': 'github.com/yyyjjjlll'
+        'phone': '188888888888',
+        'email': ':huangzihao289@gmail.com',
+        'github': 'github.com/ua-Huang'
     },
     'skills': [
         'Python (Flask/Django)',
-        '三角洲属鼠',
+        'HTML/CSS/JavaScript',
         '数据库 (MySQL/PostgreSQL)',
         'Linux/Shell',
         '通信专业户'
@@ -52,7 +52,7 @@ if __name__ == '__main__':
     with app.test_request_context():
         rendered_html = render_template('index.html', resume=RESUME_DATA)
 
-    # 替换 url_for 路径为相对路径
+        # 替换 url_for 路径为相对路径
     rendered_html = rendered_html.replace('static/images/profile.jpg', 'static/images/profile.jpg')
     rendered_html = rendered_html.replace('/static/images/profile.jpg', 'static/images/profile.jpg')
 
