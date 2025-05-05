@@ -8,7 +8,7 @@ RESUME_DATA = {
     'years_experience': '超级多年',
     'contact': {
         'phone': '188888888888',
-        'email': ':huangzihao289@gmail.com',
+        'email': 'huangzihao289@gmail.com',
         'github': 'github.com/ua-Huang'
     },
     'skills': [
